@@ -3,17 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
     <title>Triple Clean</title>
     
 </head>
- <!-- Load React. -->
-  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
-  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-
-  <!-- Load our React component. -->
-  <script src="like_button.js"></script>
 <body>
-    
+  <header>
+    header
+  </header>
+  <main>
+    <h2 class="main-heading">
+      عرض تفاصيل أمر التشغيل
+    </h2>
+    <div class="main-id english">
+      <h4>ID:</h4>
+      <span>872139</span>
+    </div>
+    <div class="main-cards-container">
+      <div class="main-card">
+        <h3>بيانات العميل</h3>
+        <div class="main-card-content">
+          <div class="main-card-info-pair">
+            <h4>اسم العميل</h4>
+            <span>محمد عبد العزيز</span>
+          </div>
+          <div class="main-card-info-pair">
+            <h4>رقم الجوال</h4>
+            <span>996654561321</span>
+          </div>
+          <div class="main-card-info-pair">
+            <h4>رقم العميل</h4>
+            <span>8744</span>
+          </div>
+          <div class="main-card-info-pair">
+            <h4>المندوب المسئول</h4>
+            <span>
+              اسم المندوب
+              <i class="fa-regular fa-pen-to-square"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="main-card">
+        <!-- <div class="main-card-id english">
+          <h4>ID:</h4>
+          <span>859</span>
+        </div> -->
+        <h3>تفاصيل الطلب</h3>
+        <div class="main-card-content">
+          <div class="main-card-info-pair">
+            <h4>التاريخ والوقت</h4>
+            <span>2024-03-22 11:40:24</span>
+          </div>
+          <div class="main-card-info-pair">
+            <h4>معرف الطلب</h4>
+            <span>896282</span>
+          </div>
+          <div class="main-card-info-pair status-pair" data-status="done">
+            <h4>حالة أمر التشغيل </h4>
+            <span class="done">تم التنفيذ</span>
+            <span class="pending">قيد التنفيذ</span>
+            <span class="cancelled">تم الإلغاء</span>
+          </div>
+          <div class="main-card-info-pair status-pair" data-status="partially-paid">
+            <h4>حالة العميل</h4>
+            <span class="paid">مدفوع</span>
+            <span class="unpaid">غير مدفوع</span>
+            <span class="partially-paid">مدفوع جزئي</span>
+          </div>
+        </div>
+      </div>
+      <div class="main-card financial">
+        <h3>المدفوعات</h3>
+        <div class="main-card-content">
+          <div>
+            <div class="total">
+              <h4>الإجمالي</h4>
+              <h2>550</h2>
+              <span>SAR</span>
+            </div>
+            <div class="paid">
+              <h4>المدفوع</h4>
+              <h2>400</h2>
+              <span>SAR</span>
+            </div>
+            <div class="change">
+              <h4>المتبقي</h4>
+              <h2>150</h2>
+              <span>SAR</span>
+            </div>
+          </div>
+          <button>
+            <i class="fa-solid fa-plus"></i>
+            <span>إضافة عملية دفع</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <aside>
+    sidebar
+  </aside>
 </body>
+<script src="js/all.min.js"></script>
+<script src="js/main.js"></script>
 </html>
