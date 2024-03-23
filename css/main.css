@@ -24,6 +24,7 @@ body{
     --main-bg: #fafafa;
     --card-bg: #fff;
     --card-header: linear-gradient(to right top, rgb(0, 0, 41) , var(--main-color));
+    /* --card-header: linear-gradient(to right top, rgb(0, 0, 41) , rgb(0, 0, 41)); */
     --bg-color: white;
     --text-color: #000;
     --main-transition: all 0.2s 0s linear;
@@ -345,6 +346,39 @@ main .main-id{
     background-image: var(--card-header);
     border-radius: 20px;
 }
+.main-card.quick-actions{
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.main-card.quick-actions button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: white;
+    border-color: var(--main-color);
+    background-color: var(--main-color);
+    box-shadow: var(--main-shadow);
+}
+.main-card.quick-actions button.assets{
+    border-color: var(--pending-color);
+    background-color: var(--pending-color);
+    
+}
+.main-card.quick-actions button.close{
+    border-color: var(--cancelled-color);
+    background-color: var(--cancelled-color);
+    
+}
+.main-card.quick-actions button.update{
+    border-color: var(--done-color);
+    background-color: var(--done-color);
+    
+}
 @media (max-width: 1200px) {
     main .main-id{
         left: 50%;
@@ -388,5 +422,8 @@ main .main-id{
     }
     .main-card{
         width: 100%;
+    }
+    .main-card.quick-actions{
+        justify-content: center;
     }
 }
