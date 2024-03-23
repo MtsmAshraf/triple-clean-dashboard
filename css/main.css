@@ -9,8 +9,9 @@
     margin: 0;
 }
 body{
-    max-height: 100vh;
+    height: 100vh;
     position: relative;
+    width: 100vw;
     overflow: hidden;
     font-family: "El Messiri", sans-serif;
 }
@@ -147,7 +148,7 @@ main::-webkit-scrollbar-thumb{
     border-radius: 10px;
 }
 main .main-id{
-    background-color: var(--main-color);
+    background-image: var(--card-header);
     color: #fff;
     width: fit-content;
     padding: 10px 20px;
@@ -332,14 +333,19 @@ main .main-id{
     }
     aside{
         transform: translateX(100%);
+        position: fixed;
     }
     main{
-        width: 100vw
+        width: 100vw;
     }
 }
 @media (max-width: 992px) {
     .main-card{
         width: calc((100% - 20px) / 2);
+    }
+    aside{
+        transform: translateX(200%);
+        position: fixed;
     }
     .main-card.financial .main-card-content > div > div h2{
         font-size: 30px;
@@ -351,18 +357,11 @@ main .main-id{
 }
 @media (max-width: 600px) {
     body{
-        height: 100vh;
+        max-width: 100vw !important;
         overflow: hidden;
         background-color: red;
     }
     .main-card{
         width: 100%;
-    }
-    .main-card.financial .main-card-content > div > div h2{
-        font-size: 30px;
-    }
-    table tr *:nth-child(8),
-    table tr *:nth-child(9){
-        display: none;
     }
 }
