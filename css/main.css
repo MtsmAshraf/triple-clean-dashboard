@@ -24,7 +24,7 @@ body{
     --main-bg: #fafafa;
     --card-bg: #fff;
     --card-header: linear-gradient(to right top, rgb(0, 0, 41) , var(--main-color));
-    /* --card-header: linear-gradient(to right top, rgb(0, 0, 41) , rgb(0, 0, 41)); */
+    --card-header: linear-gradient(to right top, rgb(0, 0, 41) , rgb(0, 0, 41));
     --bg-color: white;
     --text-color: #000;
     --main-transition: all 0.2s 0s linear;
@@ -134,14 +134,16 @@ input:focus{
     border: 1px solid var(--main-color);
 }
 header{
-    background-color: red;
+    /* background-color: red; */
+    border: 1px solid black;
     opacity: 0.3;
     height: 60px;
 }
 aside{
+    border-left: 1px solid black;
     width: 250px;
     height: calc(100vh - 60px);
-    background-color: burlywood;
+    /* background-color: burlywood; */
     position: absolute;
     right: 0;
     top: 60px;
@@ -160,7 +162,7 @@ main::-webkit-scrollbar{
     background-color: #ddd;
 }
 main::-webkit-scrollbar-thumb{
-    background-color: #aaa;
+    background-image: var(--card-header);
     border-radius: 10px;
 }
 main .main-id{
@@ -380,6 +382,17 @@ main .main-id{
 .main-card.quick-actions button.update{
     border-color: var(--done-color);
     background-color: var(--done-color);
+}
+main footer{
+    text-align: center;
+    margin-top: 20px;
+}
+main footer a{
+    display: block;
+    text-decoration: none;
+    margin-bottom: 5px;
+    color: var(--main-color);
+    font-weight: bold;
 }
 @media (max-width: 1200px) {
     main .main-id{
