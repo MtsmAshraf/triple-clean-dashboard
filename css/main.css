@@ -22,7 +22,7 @@ body{
     --main-color: #0002f8;
     --main-bg: #fafafa;
     --card-bg: #fff;
-    --card-header: #00003f;
+    --card-header: linear-gradient(to right top, rgb(0, 0, 41) , var(--main-color));
     --bg-color: white;
     --text-color: #000;
     --main-transition: all 0.2s 0s linear;
@@ -184,7 +184,7 @@ main .main-id{
     font-size: 18px;
     padding: 10px;
     border-bottom: 1px solid #eee;
-    background-color: var(--card-header);
+    background-image: var(--card-header);
     color: #fff;
     text-align: center;
 }
@@ -321,6 +321,6 @@ main .main-id{
     background-color: #eee;
 }
 .main-card.table-card .main-card-content .table-container::-webkit-scrollbar-thumb{
-    background-color: var(--card-header);
+    background-image: var(--card-header);
     border-radius: 20px;
 }
