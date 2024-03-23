@@ -67,7 +67,7 @@
             <span class="pending">قيد التنفيذ</span>
             <span class="cancelled">تم الإلغاء</span>
           </div>
-          <div class="main-card-info-pair status-pair" data-status="partially-paid">
+          <div class="main-card-info-pair status-pair" data-status="unpaid">
             <h4>حالة العميل</h4>
             <span class="paid">مدفوع</span>
             <span class="unpaid">غير مدفوع</span>
@@ -202,7 +202,14 @@
                   <td>120</td>
                   <td>مع</td>
                   <td></td>
-                  <td></td>
+                  <td>
+                    <span>
+                      <i class="fa-solid fa-pen-to-square"></i>
+                    </span>
+                    <span>
+                      <i class="fa-solid fa-trash-can"></i>
+                    </span>
+                  </td>
                 </tr>
                 <tr>
                   <td>2</td>
@@ -214,7 +221,14 @@
                   <td>120</td>
                   <td>بدون</td>
                   <td></td>
-                  <td></td>
+                  <td>
+                    <span>
+                      <i class="fa-solid fa-pen-to-square"></i>
+                    </span>
+                    <span>
+                      <i class="fa-solid fa-trash-can"></i>
+                    </span>
+                  </td>
                 </tr>
                 <tr>
                   <td>3</td>
@@ -226,7 +240,14 @@
                   <td>120</td>
                   <td>مع</td>
                   <td></td>
-                  <td></td>
+                  <td>
+                    <span>
+                      <i class="fa-solid fa-pen-to-square"></i>
+                    </span>
+                    <span>
+                      <i class="fa-solid fa-trash-can"></i>
+                    </span>
+                  </td>
                 </tr>
                 <tr>
                   <td>4</td>
@@ -238,7 +259,14 @@
                   <td>120</td>
                   <td>مع</td>
                   <td></td>
-                  <td></td>
+                  <td>
+                    <span>
+                      <i class="fa-solid fa-pen-to-square"></i>
+                    </span>
+                    <span>
+                      <i class="fa-solid fa-trash-can"></i>
+                    </span>
+                  </td>
                 </tr>
                 <tr>
                   <td>5</td>
@@ -250,7 +278,14 @@
                   <td>120</td>
                   <td>بدون</td>
                   <td></td>
-                  <td></td>
+                  <td>
+                    <span>
+                      <i class="fa-solid fa-pen-to-square"></i>
+                    </span>
+                    <span>
+                      <i class="fa-solid fa-trash-can"></i>
+                    </span>
+                  </td>
                 </tr>
                 <tr>
                   <td>6</td>
@@ -262,7 +297,14 @@
                   <td>120</td>
                   <td>بدون</td>
                   <td></td>
-                  <td></td>
+                  <td>
+                    <span>
+                      <i class="fa-solid fa-pen-to-square"></i>
+                    </span>
+                    <span>
+                      <i class="fa-solid fa-trash-can"></i>
+                    </span>
+                  </td>
                 </tr>
                 <tr>
                   <td>7</td>
@@ -274,7 +316,14 @@
                   <td>120</td>
                   <td>مع</td>
                   <td></td>
-                  <td></td>
+                  <td>
+                    <span>
+                      <i class="fa-solid fa-pen-to-square"></i>
+                    </span>
+                    <span>
+                      <i class="fa-solid fa-trash-can"></i>
+                    </span>
+                  </td>
                 </tr>
                 <tr>
                   <td>8</td>
@@ -286,7 +335,14 @@
                   <td>120</td>
                   <td>مع</td>
                   <td></td>
-                  <td></td>
+                  <td>
+                    <span>
+                      <i class="fa-solid fa-pen-to-square"></i>
+                    </span>
+                    <span>
+                      <i class="fa-solid fa-trash-can"></i>
+                    </span>
+                  </td>
                 </tr>
                 <tr>
                   <td>9</td>
@@ -298,7 +354,14 @@
                   <td>120</td>
                   <td>بدون</td>
                   <td></td>
-                  <td></td>
+                  <td>
+                    <span>
+                      <i class="fa-solid fa-pen-to-square"></i>
+                    </span>
+                    <span>
+                      <i class="fa-solid fa-trash-can"></i>
+                    </span>
+                  </td>
                 </tr>
                 <tr>
                   <td>10</td>
@@ -310,7 +373,14 @@
                   <td>120</td>
                   <td>بدون</td>
                   <td></td>
-                  <td></td>
+                  <td>
+                    <span>
+                      <i class="fa-solid fa-pen-to-square"></i>
+                    </span>
+                    <span>
+                      <i class="fa-solid fa-trash-can"></i>
+                    </span>
+                  </td>
                 </tr>
                 <tr>
                   <td>11</td>
@@ -322,7 +392,321 @@
                   <td>120</td>
                   <td>مع</td>
                   <td></td>
+                  <td>
+                    <span>
+                      <i class="fa-solid fa-pen-to-square"></i>
+                    </span>
+                    <span>
+                      <i class="fa-solid fa-trash-can"></i>
+                    </span>
+                  </td>
+                </tr>
+                  <!-- Add more rows as needed -->
+              </tbody>
+          </table>
+          </div>
+
+        </div>
+      </div>
+      <div class="main-card table-card">
+        <h3>أوامر الشراء</h3>
+        <div class="main-card-content">
+          <input type="text" id="searchInput" placeholder="Search...">
+          <div class="table-container">
+            <table id="dataTable-2">
+              <thead>
+                  <tr>
+                    <th onclick="sortTable(0)">
+                        <div>
+                          <span>
+                            رقم البند
+                          </span>
+                          <i class="fa-solid fa-sort"></i>
+                        </div>
+                    </th>
+                    <th onclick="sortTable(1)">
+                        <div>
+                          <span>
+                            الوصف
+                          </span>
+                          <i class="fa-solid fa-sort"></i>
+                        </div>
+                    </th>
+                    <th onclick="sortTable(2)">
+                        <div>
+                          <span>
+                            الكمية
+                          </span>
+                          <i class="fa-solid fa-sort"></i>
+                        </div>
+                    </th>
+                    <th onclick="sortTable(3)">
+                        <div>
+                          <span>
+                            سعر الحبة
+                          </span>
+                          <i class="fa-solid fa-sort"></i>
+                        </div>
+                    </th>
+                    <th onclick="sortTable(4)">
+                        <div>
+                          <span>
+                            المجموع
+                          </span>
+                          <i class="fa-solid fa-sort"></i>
+                        </div>
+                    </th>
+                    <th onclick="sortTable(5)">
+                        <div>
+                          <span>
+                            الضربية
+                          </span>
+                          <i class="fa-solid fa-sort"></i>
+                        </div>
+                    </th>
+                    <th onclick="sortTable(6)">
+                        <div>
+                          <span>
+                            الإجمالي
+                          </span>
+                          <i class="fa-solid fa-sort"></i>
+                        </div>
+                    </th>
+                    <th onclick="sortTable(8)">
+                        <div>
+                          <span>
+                            الضربية
+                          </span>
+                          <i class="fa-solid fa-sort"></i>
+                        </div>
+                    </th>
+                    <th onclick="sortTable(7)">
+                        <div>
+                          <span>
+                            ملاحظات
+                          </span>
+                          <i class="fa-solid fa-sort"></i>
+                        </div>
+                    </th>
+                    <th onclick="sortTable(9)">
+                        <div>
+                          <span>
+                            تعديل 
+                          </span>
+                          <i class="fa-solid fa-sort"></i>
+                        </div>
+                    </th>
+                  </tr>
+              </thead>
+              <tbody> 
+                <tr>
+                  <td>1</td>
+                  <td>منتج ١</td>
+                  <td>10</td>
+                  <td>120</td>
+                  <td>120</td>
+                  <td>0</td>
+                  <td>120</td>
+                  <td>مع</td>
                   <td></td>
+                  <td>
+                    <span>
+                      <i class="fa-solid fa-pen-to-square"></i>
+                    </span>
+                    <span>
+                      <i class="fa-solid fa-trash-can"></i>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>منتج ٢</td>
+                  <td>20</td>
+                  <td>120</td>
+                  <td>120</td>
+                  <td>1 0</td>
+                  <td>120</td>
+                  <td>بدون</td>
+                  <td></td>
+                  <td>
+                    <span>
+                      <i class="fa-solid fa-pen-to-square"></i>
+                    </span>
+                    <span>
+                      <i class="fa-solid fa-trash-can"></i>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>منتج ٣</td>
+                  <td>15</td>
+                  <td>120</td>
+                  <td>120</td>
+                  <td>1 0</td>
+                  <td>120</td>
+                  <td>مع</td>
+                  <td></td>
+                  <td>
+                    <span>
+                      <i class="fa-solid fa-pen-to-square"></i>
+                    </span>
+                    <span>
+                      <i class="fa-solid fa-trash-can"></i>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>منتج ٤</td>
+                  <td>10</td>
+                  <td>120</td>
+                  <td>120</td>
+                  <td>0</td>
+                  <td>120</td>
+                  <td>مع</td>
+                  <td></td>
+                  <td>
+                    <span>
+                      <i class="fa-solid fa-pen-to-square"></i>
+                    </span>
+                    <span>
+                      <i class="fa-solid fa-trash-can"></i>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>منتج ٥</td>
+                  <td>25</td>
+                  <td>120</td>
+                  <td>120</td>
+                  <td>0</td>
+                  <td>120</td>
+                  <td>بدون</td>
+                  <td></td>
+                  <td>
+                    <span>
+                      <i class="fa-solid fa-pen-to-square"></i>
+                    </span>
+                    <span>
+                      <i class="fa-solid fa-trash-can"></i>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>منتج ٦</td>
+                  <td>15</td>
+                  <td>120</td>
+                  <td>120</td>
+                  <td>0</td>
+                  <td>120</td>
+                  <td>بدون</td>
+                  <td></td>
+                  <td>
+                    <span>
+                      <i class="fa-solid fa-pen-to-square"></i>
+                    </span>
+                    <span>
+                      <i class="fa-solid fa-trash-can"></i>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>منتج ٧</td>
+                  <td>10</td>
+                  <td>120</td>
+                  <td>120</td>
+                  <td>0</td>
+                  <td>120</td>
+                  <td>مع</td>
+                  <td></td>
+                  <td>
+                    <span>
+                      <i class="fa-solid fa-pen-to-square"></i>
+                    </span>
+                    <span>
+                      <i class="fa-solid fa-trash-can"></i>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>منتج ٨</td>
+                  <td>20</td>
+                  <td>120</td>
+                  <td>120</td>
+                  <td>0</td>
+                  <td>120</td>
+                  <td>مع</td>
+                  <td></td>
+                  <td>
+                    <span>
+                      <i class="fa-solid fa-pen-to-square"></i>
+                    </span>
+                    <span>
+                      <i class="fa-solid fa-trash-can"></i>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>منتج ٩</td>
+                  <td>10</td>
+                  <td>120</td>
+                  <td>120</td>
+                  <td>0</td>
+                  <td>120</td>
+                  <td>بدون</td>
+                  <td></td>
+                  <td>
+                    <span>
+                      <i class="fa-solid fa-pen-to-square"></i>
+                    </span>
+                    <span>
+                      <i class="fa-solid fa-trash-can"></i>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>منتج ١٠</td>
+                  <td>15</td>
+                  <td>120</td>
+                  <td>120</td>
+                  <td>0</td>
+                  <td>120</td>
+                  <td>بدون</td>
+                  <td></td>
+                  <td>
+                    <span>
+                      <i class="fa-solid fa-pen-to-square"></i>
+                    </span>
+                    <span>
+                      <i class="fa-solid fa-trash-can"></i>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>11</td>
+                  <td>منتج ١١</td>
+                  <td>20</td>
+                  <td>120</td>
+                  <td>120</td>
+                  <td>0</td>
+                  <td>120</td>
+                  <td>مع</td>
+                  <td></td>
+                  <td>
+                    <span>
+                      <i class="fa-solid fa-pen-to-square"></i>
+                    </span>
+                    <span>
+                      <i class="fa-solid fa-trash-can"></i>
+                    </span>
+                  </td>
                 </tr>
                   <!-- Add more rows as needed -->
               </tbody>
