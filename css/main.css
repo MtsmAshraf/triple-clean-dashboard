@@ -48,6 +48,74 @@ button:hover, button:focus, button:focus-visible{
     background-color: var(--main-color);
     color: #fff;
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    /* margin-top: 10px; */
+    /* margin-bottom: 10px; */
+}
+th, td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    font-weight: normal;
+}
+th {
+    cursor: pointer;
+    background-color: #eee;
+    position: sticky;
+    top: 0;
+}
+th div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+th div svg{
+    color: var(--card-header);
+    font-size: 14px;
+    opacity: 0.4;
+}
+th:hover div svg{
+    opacity: 1;
+}
+.pagination {
+    margin-top: 20px;
+    margin-right: 10px;
+    overflow: hidden;
+    border: 1px solid var(--main-color);
+    border-radius: 6px;
+    width: fit-content;
+}
+
+.pagination button {
+    color: var(--main-color);
+    background-color: transparent;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 0;
+}
+.pagination button.active {
+    background-color: var(--main-color);
+    color: #fff;
+}
+.pagination button:hover:not(.active) {
+    background-color: #ccc;
+
+}
+input{
+    padding: 5px 10px;
+    margin-right: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    caret-color: var(--main-color);
+}
+input:focus{
+    outline: none;
+    border: 1px solid var(--main-color);
+}
 header{
     background-color: red;
     opacity: 0.3;
@@ -209,7 +277,7 @@ main .main-id{
 }
 .main-card.financial .main-card-content > div > div h2{
     font-weight: normal;
-    font-size: 50px;
+    font-size: 40px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -236,4 +304,23 @@ main .main-id{
     align-items: center;
     justify-content: center;
     gap: 10px;
+}
+.main-card.table-card{
+    width: 100%;
+}
+.main-card.table-card .main-card-content{
+    padding: 10px 0px 20px;
+}
+.main-card.table-card .main-card-content .table-container{
+    height: 200px;
+    margin-top: 10px;
+    overflow-y: scroll;
+}
+.main-card.table-card .main-card-content .table-container::-webkit-scrollbar{
+    width: 10px;
+    background-color: #eee;
+}
+.main-card.table-card .main-card-content .table-container::-webkit-scrollbar-thumb{
+    background-color: var(--card-header);
+    border-radius: 20px;
 }
