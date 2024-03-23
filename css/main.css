@@ -351,7 +351,7 @@ main .main-id{
 }
 @media (max-width: 600px) {
     body{
-        height: fit-content;
+        height: 100vh;
         overflow: hidden;
         background-color: red;
     }
