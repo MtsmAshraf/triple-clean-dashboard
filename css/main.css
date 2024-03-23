@@ -12,7 +12,7 @@ body{
     /* height: 100vh; */
     position: relative;
     width: 100vw;
-    overflow: hidden;
+    /* overflow: hidden; */
     font-family: "El Messiri", sans-serif;
 }
 .english{
@@ -140,7 +140,7 @@ header{
 }
 aside{
     width: 250px;
-    height: 100vh;
+    height: calc(100vh - 60px);
     background-color: burlywood;
     position: absolute;
     right: 0;
