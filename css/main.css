@@ -9,7 +9,7 @@
     margin: 0;
 }
 body{
-    height: 100vh;
+    /* height: 100vh; */
     position: relative;
     width: 100vw;
     overflow: hidden;
@@ -362,6 +362,9 @@ main .main-id{
     color: white;
     border-color: var(--main-color);
     background-color: var(--main-color);
+    transition: var(--main-transition);
+}
+.main-card.quick-actions button:hover{
     box-shadow: var(--main-shadow);
 }
 .main-card.quick-actions button.assets{
@@ -377,7 +380,6 @@ main .main-id{
 .main-card.quick-actions button.update{
     border-color: var(--done-color);
     background-color: var(--done-color);
-    
 }
 @media (max-width: 1200px) {
     main .main-id{
