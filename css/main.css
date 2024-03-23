@@ -154,7 +154,6 @@ main{
     direction: rtl;
     padding: 20px;
     position: relative;
-    margin-bottom: 200px;
 }
 main::-webkit-scrollbar{
     width: 10px;
@@ -421,7 +420,6 @@ main .main-id{
     }
     body{
         /* max-width: 100vh !important; */
-        overflow: hidden;
     }
     .main-card{
         width: 100%;
