@@ -1,6 +1,5 @@
 let currentPage = 1;
 // let rowsPerPage = 6; // Number of rows to show per page
-
 function sortTable(n) {
     let table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
     table = document.getElementById("dataTable");
@@ -37,7 +36,6 @@ function sortTable(n) {
         }
     }
 }
-
 function filterTable() {
     let input, filter, table, tr, td, i, txtValue;
     input = document.getElementById("searchInput");
@@ -56,7 +54,6 @@ function filterTable() {
         }
     }
 }
-
 function showPage(page) {
     let table = document.getElementById("dataTable");
     let rows = table.getElementsByTagName("tr");
@@ -80,9 +77,39 @@ function showPage(page) {
     }
     pagination.innerHTML = paginationHTML;
 }
-
 // Initial table setup
 window.onload = function () {
     sortTable(0); // Sort table by first column initially
     showPage(1); // Show first page initially
 };
+
+let toggleThemeBtn = document.querySelector(".toggle-theme");
+let isDark = false; 
+let root = document.querySelector(":root");
+toggleThemeBtn.onclick = () =>  {
+    if(isDark) {
+        root.style.setProperty("--main-bg", "#060818")
+        root.style.setProperty("--main-color", "#6969ff")
+        root.style.setProperty("--card-bg", "#0e1726")
+        root.style.setProperty("--table-header", "#1a2941")
+        root.style.setProperty("--card-header", "linear-gradient(to right top, #1a2941 , #1a2941)")
+        root.style.setProperty("--text-color", "#fff")
+        root.style.setProperty("--main-shadow", "0px 5px 20px 0px #ccc")
+        root.style.setProperty("--card-shadow", "0px 10px 10px 0px #071122")
+        root.style.setProperty("--span-color", "#aaa")
+        toggleThemeBtn.classList.toggle("dark");
+        isDark = false;
+    }else{
+        root.style.setProperty("--main-bg", "#fafafa")
+        root.style.setProperty("--main-color", "#0002f8")
+        root.style.setProperty("--card-bg", "#fff")
+        root.style.setProperty("--table-header", "#637381")
+        root.style.setProperty("--card-header", "linear-gradient(to right top, #1a2941 , #1a2941)")
+        root.style.setProperty("--text-color", "#000")
+        root.style.setProperty("--main-shadow", "0px 5px 20px 0px #ccc")
+        root.style.setProperty("--card-shadow", "0px 2px 10px 0px #ccc")
+        root.style.setProperty("--span-color", "#333")
+        toggleThemeBtn.classList.toggle("dark");
+        isDark = true;
+    }
+}
