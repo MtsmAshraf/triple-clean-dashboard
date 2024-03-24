@@ -24,7 +24,7 @@ body{
     --main-bg: #fafafa;
     --card-bg: #fff;
     --card-header: linear-gradient(to right top, rgb(0, 0, 41) , var(--main-color));
-    --card-header: linear-gradient(to right top, rgb(0, 0, 41) , rgb(0, 0, 41));
+    --card-header: linear-gradient(to right top, #637381 , #637381);
     --bg-color: white;
     --text-color: #000;
     --main-transition: all 0.2s 0s linear;
@@ -329,8 +329,25 @@ main .main-id{
     justify-content: center;
     gap: 10px;
 }
+.main-card.financial .main-card-content button:hover{
+    box-shadow: var(--main-shadow);
+}
 .main-card.table-card{
     width: 100%;
+}
+.main-card.table-card:has(button) .main-card-content > div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.main-card.table-card button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.main-card.table-card button:hover{
+    box-shadow: var(--main-shadow);
 }
 .main-card.table-card .main-card-content{
     padding: 10px 0px 20px;
@@ -358,30 +375,19 @@ main .main-id{
 }
 .main-card.quick-actions button{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     gap: 10px;
-    color: white;
+    /* color: white; */
     border-color: var(--main-color);
-    background-color: var(--main-color);
+    /* background-color: var(--main-color); */
     transition: var(--main-transition);
 }
 .main-card.quick-actions button:hover{
     box-shadow: var(--main-shadow);
 }
-.main-card.quick-actions button.assets{
-    border-color: var(--pending-color);
-    background-color: var(--pending-color);
-    
-}
-.main-card.quick-actions button.close{
-    border-color: var(--cancelled-color);
-    background-color: var(--cancelled-color);
-    
-}
-.main-card.quick-actions button.update{
-    border-color: var(--done-color);
-    background-color: var(--done-color);
+.main-card.quick-actions button > *{
+    height: 100%s;
 }
 .main-card.assets-card{
     width: 100%;
