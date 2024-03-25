@@ -199,7 +199,7 @@ main{
     position: relative;
 }
 main  *{
-    transition: var(--main-transition);
+    /* transition: var(--main-transition); */
 }
 main::-webkit-scrollbar{
     width: 10px;
@@ -246,7 +246,7 @@ main .main-id{
     background-color: var(--card-bg);
     width: calc((100% - 20px * 2) / 3);
     width: calc((100% - 20px * 1) / 2);
-    min-width:fit-content ;
+    /* min-width:fit-content ; */
     box-shadow: var(--card-shadow);
     border-radius: 6px;
     overflow: hidden;
@@ -469,6 +469,11 @@ main .main-id{
     width: 600px;
     margin-right: auto;
     margin-left: auto;
+}
+@media (max-width: 768px) {
+    .main-card.assets-card .main-card-content{
+        width: 100%;
+    }
 }
 .main-card.assets-card .main-card-content .img{
     height: fit-content;
