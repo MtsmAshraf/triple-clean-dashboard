@@ -19,7 +19,7 @@
   </header>
   <main>
     <h2 class="main-heading">
-      عرض تفاصيل أمر التشغيل
+      تفاصيل أمر التشغيل
     </h2>
     <div class="main-id english">
       <h4>ID:</h4>
@@ -27,20 +27,20 @@
     </div>
     <div class="main-card quick-actions">
       <button class="assets">
-        <span>إضافة مرفقات</span>
         <i class="fa-solid fa-image"></i>
+        <span>إضافة مرفقات</span>
       </button>
       <button class="update">
-        <span>إضافة تحديث</span>
         <i class="fa-solid fa-arrows-rotate"></i>
+        <span>إضافة تحديث</span>
       </button>
-      <button>
-        <span>إضافة فاتورة</span>
+      <button class="bill">
         <i class="fa-solid fa-file-invoice"></i>
+        <span>إضافة فاتورة</span>
       </button>
       <button class="close">
+        <i class="fa-solid fa-lock"></i>
         <span>إغلاق الطلب</span>
-        <i class="fa-solid fa-image"></i>
       </button>
     </div>
     <div class="main-cards-container">
@@ -771,13 +771,13 @@
               </button>
             </div>
           <div class="table-container">
-            <table id="dataTable-2">
+            <table id="dataTable-3">
               <thead>
                   <tr>
                     <th onclick="sortTable(0)">
                         <div>
                           <span>
-                            رقم البند
+                            No
                           </span>
                           <i class="fa-solid fa-sort"></i>
                         </div>
@@ -785,7 +785,7 @@
                     <th onclick="sortTable(1)">
                         <div>
                           <span>
-                            الوصف
+                            ID
                           </span>
                           <i class="fa-solid fa-sort"></i>
                         </div>
@@ -793,7 +793,7 @@
                     <th onclick="sortTable(2)">
                         <div>
                           <span>
-                            الكمية
+                            طريقة الدفع
                           </span>
                           <i class="fa-solid fa-sort"></i>
                         </div>
@@ -801,7 +801,7 @@
                     <th onclick="sortTable(3)">
                         <div>
                           <span>
-                            سعر الحبة
+                            المبلغ
                           </span>
                           <i class="fa-solid fa-sort"></i>
                         </div>
@@ -809,7 +809,7 @@
                     <th onclick="sortTable(4)">
                         <div>
                           <span>
-                            المجموع
+                            تاريخ الدفع
                           </span>
                           <i class="fa-solid fa-sort"></i>
                         </div>
@@ -817,7 +817,7 @@
                     <th onclick="sortTable(5)">
                         <div>
                           <span>
-                            الضربية
+                            الشخص المحصل
                           </span>
                           <i class="fa-solid fa-sort"></i>
                         </div>
@@ -825,15 +825,7 @@
                     <th onclick="sortTable(6)">
                         <div>
                           <span>
-                            الإجمالي
-                          </span>
-                          <i class="fa-solid fa-sort"></i>
-                        </div>
-                    </th>
-                    <th onclick="sortTable(8)">
-                        <div>
-                          <span>
-                            الضربية
+                            ملاحظات
                           </span>
                           <i class="fa-solid fa-sort"></i>
                         </div>
@@ -841,12 +833,12 @@
                     <th onclick="sortTable(7)">
                         <div>
                           <span>
-                            ملاحظات
+                            التاريخ والوقت
                           </span>
                           <i class="fa-solid fa-sort"></i>
                         </div>
                     </th>
-                    <th onclick="sortTable(9)">
+                    <th onclick="sortTable(8)">
                         <div>
                           <span>
                             تعديل 
@@ -866,7 +858,6 @@
                   <td>0</td>
                   <td>120</td>
                   <td>مع</td>
-                  <td></td>
                   <td>
                     <span>
                       <i class="fa-solid fa-pen-to-square"></i>
@@ -885,7 +876,6 @@
                   <td>1 0</td>
                   <td>120</td>
                   <td>بدون</td>
-                  <td></td>
                   <td>
                     <span>
                       <i class="fa-solid fa-pen-to-square"></i>
@@ -904,7 +894,6 @@
                   <td>1 0</td>
                   <td>120</td>
                   <td>مع</td>
-                  <td></td>
                   <td>
                     <span>
                       <i class="fa-solid fa-pen-to-square"></i>
@@ -923,7 +912,6 @@
                   <td>0</td>
                   <td>120</td>
                   <td>مع</td>
-                  <td></td>
                   <td>
                     <span>
                       <i class="fa-solid fa-pen-to-square"></i>
@@ -942,7 +930,6 @@
                   <td>0</td>
                   <td>120</td>
                   <td>بدون</td>
-                  <td></td>
                   <td>
                     <span>
                       <i class="fa-solid fa-pen-to-square"></i>
@@ -961,7 +948,6 @@
                   <td>0</td>
                   <td>120</td>
                   <td>بدون</td>
-                  <td></td>
                   <td>
                     <span>
                       <i class="fa-solid fa-pen-to-square"></i>
@@ -980,7 +966,6 @@
                   <td>0</td>
                   <td>120</td>
                   <td>مع</td>
-                  <td></td>
                   <td>
                     <span>
                       <i class="fa-solid fa-pen-to-square"></i>
@@ -999,7 +984,6 @@
                   <td>0</td>
                   <td>120</td>
                   <td>مع</td>
-                  <td></td>
                   <td>
                     <span>
                       <i class="fa-solid fa-pen-to-square"></i>
@@ -1018,7 +1002,6 @@
                   <td>0</td>
                   <td>120</td>
                   <td>بدون</td>
-                  <td></td>
                   <td>
                     <span>
                       <i class="fa-solid fa-pen-to-square"></i>
@@ -1037,7 +1020,6 @@
                   <td>0</td>
                   <td>120</td>
                   <td>بدون</td>
-                  <td></td>
                   <td>
                     <span>
                       <i class="fa-solid fa-pen-to-square"></i>
@@ -1056,7 +1038,6 @@
                   <td>0</td>
                   <td>120</td>
                   <td>مع</td>
-                  <td></td>
                   <td>
                     <span>
                       <i class="fa-solid fa-pen-to-square"></i>
@@ -1171,6 +1152,102 @@
     </p>
   </footer>
   </main>
+  <div class="pop-ups hidden removed">
+    <div class="pop-up-oveylay"></div>
+    <div class="pop-up">
+      <h3 class="pop-up-header">
+        <span>
+          إضافة مرفقات
+        </span>
+        <div class="close-pop-up">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </h3>
+      <form action="">
+        <div>
+          <label for="add-asset-btn">
+            <i class="fa-solid fa-plus"></i>
+          </label>
+          <input type="file" id="add-asset-btn">
+        </div>
+        <div>
+          <label for="asset-name">اسم المرفق</label>
+          <input type="text" id="asset-name" placeholder="اسم المرفق">
+        </div>
+        <div class="pop-up-form-btns">
+          <input type="submit" value="حفظ">
+          <input type="reset" value="إلغاء">
+        </div>
+      </form>
+    </div>
+    <div class="pop-up">
+      <h3 class="pop-up-header">
+        <span>
+          إضافة تحديث
+        </span>
+        <div class="close-pop-up">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </h3>
+      <form action="">
+        <div>
+          <label for="add-asset-btn">
+            <i class="fa-solid fa-plus"></i>
+          </label>
+          <input type="file" id="add-asset-btn">
+        </div>
+        <div>
+          <label for="asset-name">اسم المرفق</label>
+          <input type="text" id="asset-name" placeholder="اسم المرفق">
+        </div>
+        <div class="pop-up-form-btns">
+          <input type="submit" value="حفظ">
+          <input type="reset" value="إلغاء">
+        </div>
+      </form>
+    </div>
+    <div class="pop-up">
+      <h3 class="pop-up-header">
+        <span>
+          إضافة فاتورة
+        </span>
+        <div class="close-pop-up">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </h3>
+      <form action="">
+        <div>
+          <label for="add-asset-btn">
+            <i class="fa-solid fa-plus"></i>
+          </label>
+          <input type="file" id="add-asset-btn">
+        </div>
+        <div>
+          <label for="asset-name">اسم المرفق</label>
+          <input type="text" id="asset-name" placeholder="اسم المرفق">
+        </div>
+        <div class="pop-up-form-btns">
+          <input type="submit" value="حفظ">
+          <input type="reset" value="إلغاء">
+        </div>
+      </form>
+    </div>
+    <div class="pop-up">
+      <h3 class="pop-up-header">
+        <span>
+          إغلاق الطلب
+        </span>
+        <div class="close-pop-up">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </h3>
+      <p>هل تريد إغلاق الطلب؟</p>
+      <div class="pop-up-btns">
+        <button>حفظ</button>
+        <button>إلغاء</button>
+      </div>
+    </div>
+  </div>
   <aside>
     sidebar
   </aside>

@@ -44,6 +44,7 @@ body{
     --pending-color: #6363ff;
     --span-color: #333;
     /* --span-color: #aaa; */
+    --overlay-bg: rgb(0,0,0,0.7)
 }
 button{
     padding: 5px 10px;
@@ -141,6 +142,7 @@ input{
     border: 1px solid var(--span-color);
     caret-color: var(--main-color);
     background-color: var(--main-bg);
+    color: var(--text-color);
 }
 input:focus{
     outline: none;
@@ -225,8 +227,8 @@ main .main-id{
     direction: ltr;
     border-radius: 6px;
     position: absolute;
-    top: 0;
-    left: 50%;
+    /* top: 0; */
+    /* left: 50%; */
     /* transform: translateX(-50%); */
     /* box-shadow: var(--card-shadow); */
     top: 10px;
@@ -250,7 +252,7 @@ main .main-id{
     box-shadow: var(--card-shadow);
     border-radius: 6px;
     overflow: hidden;
-    /* height: fit-content; */
+    height: fit-content;
     position: relative;
     border: 1px solid var(--table-header);
 }
@@ -342,6 +344,15 @@ main .main-id{
     top: 6px;
     left: 10px;
     font-weight: normal;
+}
+.main-card.financial  {
+}
+.main-card.financial .main-card-content {
+    display: grid;
+    place-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
 }
 .main-card.financial .main-card-content > div{
     display: flex;
@@ -551,9 +562,124 @@ main footer a{
     color: var(--main-color);
     font-weight: bold;
 }
+.pop-ups{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    direction: rtl;
+    transition: var(--main-transition);
+}
+.pop-ups.hidden{
+    opacity: 0;
+}
+.pop-ups.removed{
+    display: none;
+}
+.pop-ups .pop-up-oveylay{
+    position: absolute;
+    background-color: var(--overlay-bg);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.pop-ups .pop-up{
+    z-index: 2;
+    background-color: var(--main-bg);
+    border-radius: 8px;
+    display: none;
+    min-width: 250px;
+}
+.pop-ups .pop-up h3{
+    padding: 12px 20px;
+    background-color: var(--table-header);
+    border-radius: 8px 8px 0px 0px;
+    color: white;
+    position: relative;
+}
+.pop-ups .pop-up h3 .close-pop-up{
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    cursor: pointer;
+    color: var(--cancelled-color);
+    background-color: var(--main-bg);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    padding: 2px;
+    transform: translate(-50%,-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--main-transition);
+}
+.pop-ups .pop-up h3 .close-pop-up:hover{
+    background-color: var(--cancelled-color);
+    color: var(--main-bg);
+}
+.pop-ups .pop-up form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+.pop-ups .pop-up form label[for="add-asset-btn"]{
+    cursor: pointer;
+    background-color: var(--main-color);
+    color: white;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: var(--card-shadow);
+}
+.pop-ups .pop-up form label[for="add-asset-btn"] svg{
+    transition: var(--main-transition);
+}
+.pop-ups .pop-up form label[for="add-asset-btn"]:hover svg{
+    transform: rotateZ(90deg);
+}
+.pop-ups .pop-up form input[type="file"]{
+    display: none;
+}
+.pop-ups .pop-up .pop-up-form-btns input{
+     cursor: pointer;
+     transition: var(--main-transition);
+     border-color: var(--main-color);
+     color: var(--main-color);
+}
+.pop-ups .pop-up .pop-up-form-btns input[type="submit"]{
+    background-color: var(--main-color);
+    color: #fff;
+}
+.pop-ups .pop-up p{
+    padding: 20px;
+    text-align: center;
+    font-size: 20px;
+}
+.pop-ups .pop-up .pop-up-btns{
+    padding: 0px 20px 20px;
+    text-align: center;
+}
+.pop-ups .pop-up .pop-up-btns button:first-child{
+    background-color: var(--main-color);
+    color: #fff;
+}
 @media (max-width: 1200px) {
     main .main-id{
-        left: 50%;
+        /* left: 50%; */
     }
     .main-card{
     }

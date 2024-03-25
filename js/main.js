@@ -86,7 +86,8 @@ window.onload = function () {
 let toggleThemeBtn = document.querySelector(".toggle-theme");
 let isDark = false; 
 let root = document.querySelector(":root");
-toggleThemeBtn.onclick = () =>  {
+
+const toggleTheme = () => {
     if(isDark) {
         root.style.setProperty("--main-bg", "#060818")
         root.style.setProperty("--main-color", "#6969ff")
@@ -112,4 +113,54 @@ toggleThemeBtn.onclick = () =>  {
         toggleThemeBtn.classList.toggle("dark");
         isDark = true;
     }
+}
+window.onload = () => {
+    toggleTheme();
+}
+toggleThemeBtn.onclick = () =>  {
+    toggleTheme();
+}
+
+let quickActionsBtns = document.querySelectorAll(".quick-actions button")
+let popupsContainer = document.querySelector(".pop-ups")
+let popups = document.querySelectorAll(".pop-ups .pop-up");
+let popupsContainerOverlay = document.querySelector(".pop-ups .pop-up-oveylay")
+let popupCloseBtns = document.querySelectorAll(".close-pop-up")
+let addAssestsBtn  = document.querySelector("button.assets");
+console.log(quickActionsBtns)
+const closePopup = () => {
+    popupsContainer.classList.add("hidden")
+    setTimeout(() => {
+        popupsContainer.classList.add("removed")
+    }, 200);
+}
+const openPopup = () => {
+    popupsContainer.classList.remove("removed")
+    setTimeout(() => {
+        popupsContainer.classList.remove("hidden")
+    }, 200);
+}
+
+popups.forEach((popup, index) => {
+    console.log(popup, index)
+    // popup.style.display = "none"
+})
+quickActionsBtns.forEach((btn,index) => {
+    console.log(btn, index)
+    btn.onclick = () => {
+        openPopup()
+        popups.forEach((popup) => {
+            console.log(popup, index)
+            popup.style.display = "none"
+        })
+        popups[index].style.display = "block"
+    }
+})
+popupCloseBtns.forEach((popupCloseBtn) => {
+    popupCloseBtn.onclick = () => {
+        closePopup();
+    }
+})
+popupsContainerOverlay.onclick = () => {
+    closePopup();
 }
