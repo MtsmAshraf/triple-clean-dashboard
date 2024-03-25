@@ -224,13 +224,13 @@ main .main-id{
     gap: 5px;
     direction: ltr;
     border-radius: 6px;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 50%;
-    transform: translateX(-50%);
-    box-shadow: var(--card-shadow);
-    top: 60px;
-    left: calc((100% - 250px) / 2);
+    /* transform: translateX(-50%); */
+    /* box-shadow: var(--card-shadow); */
+    top: 10px;
+    left: 20px;
     z-index: 4;
 }
 @media (max-width: 1200px) {
