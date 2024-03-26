@@ -90,10 +90,19 @@
             <span class="cancelled">تم الإلغاء</span>
           </div>
           <div class="main-card-info-pair status-pair" data-status="unpaid">
-            <h4>حالة العميل</h4>
+            <h4>حالة المدفوعات</h4>
             <span class="paid">مدفوع</span>
             <span class="unpaid">غير مدفوع</span>
             <span class="partially-paid">مدفوع جزئي</span>
+          </div>
+          <div class="main-card-info-pair" data-status="unpaid">
+            <h4>أهمية العمل</h4>
+            <span>
+              <select name="" id="">
+                <option value="عادي">عادي</option>
+                <option value="عاجل">عاجل</option>
+              </select>
+            </span>
           </div>
         </div>
       </div>
@@ -1144,6 +1153,64 @@
           </div>
         </div>
       </div>
+      <div class="main-card assets-parts">
+        <h3>مرفقات أخرى</h3>
+        <div class="main-card-content">
+          <div class="assets-part">
+            <h4>ملف التصميم</h4>
+            <div class="assets-part-imgs">
+              <div class="asset-wrapper">
+                <img src="./assests//benjamin-r-hw0EoA_sgBA-unsplash.jpg" alt="">
+                <span>صورة ملف التصميم</span>
+              </div>
+              <div class="asset-wrapper">
+                <img src="./assests/faith-yarn-Wr0TpKqf26s-unsplash.jpg" alt="">
+                <span>صورة ملف التصميم</span>
+              </div>
+            </div>
+          </div>
+          <div class="assets-part">
+            <h4>الفاتورة</h4>
+            <div class="assets-part-imgs">
+              <div class="asset-wrapper">
+                <img src="./assests/faith-yarn-Wr0TpKqf26s-unsplash.jpg" alt="">
+                <span>صورة الفاتورة</span>
+              </div>
+            </div>
+          </div>
+          <div class="assets-part">
+            <h4>إشعار التسليم</h4>
+            <div class="assets-part-imgs">
+              <div class="asset-wrapper">
+                <img src="./assests/faith-yarn-Wr0TpKqf26s-unsplash.jpg" alt="">
+                <span>صورة إشعار التسليم</span>
+              </div>
+            </div>
+          </div>
+          <div class="assets-part">
+            <h4>مرفقات أخرى</h4>
+            <div class="assets-part-imgs">
+              <div class="asset-wrapper">
+                <img src="./assests//benjamin-r-hw0EoA_sgBA-unsplash.jpg" alt="">
+                <span>صورة مرفقات أخرى</span>
+              </div>
+              <div class="asset-wrapper">
+                <img src="./assests/faith-yarn-Wr0TpKqf26s-unsplash.jpg" alt="">
+                <span>صورة مرفقات أخرى</span>
+              </div>
+            </div>
+          </div>
+          <div class="assets-part">
+            <h4>التعميد</h4>
+            <div class="assets-part-imgs">
+              <div class="asset-wrapper">
+                <img src="./assests/faith-yarn-Wr0TpKqf26s-unsplash.jpg" alt="">
+                <span>صورة التعميد</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   <footer>
     <p>
@@ -1197,8 +1264,8 @@
           <input type="file" id="add-asset-btn">
         </div>
         <div>
-          <label for="asset-name">اسم المرفق</label>
-          <input type="text" id="asset-name" placeholder="اسم المرفق">
+          <label for="asset-name">تفاصيل التحديث</label>
+          <textarea id="asset-name"  placeholder="تفاصيل التحديث"></textarea>
         </div>
         <div class="pop-up-form-btns">
           <input type="submit" value="حفظ">
@@ -1222,9 +1289,23 @@
           </label>
           <input type="file" id="add-asset-btn">
         </div>
+        <div class="bill-type-wrapper">
+          <div>
+            <label for="in-bill">إيداع</label>
+            <input type="radio" name="bill-type" id="in-bill">
+          </div>
+          <div>
+            <label for="out-bill">مصروف</label>
+            <input type="radio" name="bill-type" id="out-bill">
+          </div>
+        </div>
         <div>
-          <label for="asset-name">اسم المرفق</label>
-          <input type="text" id="asset-name" placeholder="اسم المرفق">
+          <label for="bill-number">رقم الفاتورة</label>
+          <input type="number" id="bill-number" placeholder="رقم الفاتورة">
+        </div>
+        <div>
+          <label for="bill-money">مبلغ الفاتورة</label>
+          <input type="number" id="bill-money" placeholder="مبلغ الفاتورة">
         </div>
         <div class="pop-up-form-btns">
           <input type="submit" value="حفظ">
@@ -1244,7 +1325,7 @@
       <p>هل تريد إغلاق الطلب؟</p>
       <div class="pop-up-btns">
         <button>حفظ</button>
-        <button>إلغاء</button>
+        <input type="reset" value="إلغاء">
       </div>
     </div>
   </div>

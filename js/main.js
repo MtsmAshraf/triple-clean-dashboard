@@ -98,6 +98,7 @@ const toggleTheme = () => {
         root.style.setProperty("--main-shadow", "0px 5px 20px 0px #ccc")
         root.style.setProperty("--card-shadow", "0px 10px 10px 0px #071122")
         root.style.setProperty("--span-color", "#aaa")
+        root.style.setProperty("--asset-img-hovererd", "rgb(0, 0, 15)")
         toggleThemeBtn.classList.toggle("dark");
         isDark = false;
     }else{
@@ -110,6 +111,7 @@ const toggleTheme = () => {
         root.style.setProperty("--main-shadow", "0px 5px 20px 0px #ccc")
         root.style.setProperty("--card-shadow", "0px 2px 10px 0px #ccc")
         root.style.setProperty("--span-color", "#333")
+        root.style.setProperty("--asset-img-hovererd", "#eee")
         toggleThemeBtn.classList.toggle("dark");
         isDark = true;
     }
@@ -126,6 +128,7 @@ let popupsContainer = document.querySelector(".pop-ups")
 let popups = document.querySelectorAll(".pop-ups .pop-up");
 let popupsContainerOverlay = document.querySelector(".pop-ups .pop-up-oveylay")
 let popupCloseBtns = document.querySelectorAll(".close-pop-up")
+let popupCloseInputs = document.querySelectorAll(".pop-up input[type='reset']")
 let addAssestsBtn  = document.querySelector("button.assets");
 console.log(quickActionsBtns)
 const closePopup = () => {
@@ -158,6 +161,11 @@ quickActionsBtns.forEach((btn,index) => {
 })
 popupCloseBtns.forEach((popupCloseBtn) => {
     popupCloseBtn.onclick = () => {
+        closePopup();
+    }
+})
+popupCloseInputs.forEach((popupCloseInput) => {
+    popupCloseInput.onclick = () => {
         closePopup();
     }
 })
