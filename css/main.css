@@ -74,10 +74,17 @@ select{
     border-radius: 6px;
     /* padding: 5px; */
     border: 1px solid var(--text-color);
+    padding-left: 10px;
+    padding-right: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
 }
 select:focus{
     outline: none;
     border: 1px solid var(--main-color);
+}
+select option{
+    border-radius: 6px;
 }
 table {
     width: 100%;
@@ -271,9 +278,20 @@ main .main-id{
     border-radius: 6px;
     overflow: hidden;
     /* height: auto; */
-    height: max-content;
+    /* min-height: 280px; */
     position: relative;
     border: 1px solid var(--table-header);
+    display: flex;
+    flex-direction: column;
+}
+.main-card .main-card-content,
+.main-card .main-card-content{
+    /* height: calc(280px - 41.5px); */
+    height: 240px;
+}
+.main-card.assets-card .main-card-content,
+.main-card.assets-parts .main-card-content{
+    height: fit-content;
 }
 .main-card h3{
     font-weight: normal;
@@ -289,7 +307,7 @@ main .main-id{
     align-items: center;
 }
 .main-card .main-card-info-pair:not(:last-child){
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--span-color);
 }
 .main-card .main-card-info-pair > *{
     padding: 8px 10px 8px 0px;
@@ -299,11 +317,15 @@ main .main-id{
     width: 130px;
     font-weight: normal;
     color: #fff;
+    height: 100%;
+    place-content: center;
 }
 .main-card .main-card-info-pair span{
     text-align: center;
     flex: 1;
     position: relative;
+    height: 100%;
+    place-content: center;
 }
 .main-card .main-card-info-pair span:has(select){
     padding: 0;
@@ -370,11 +392,11 @@ main .main-id{
 .main-card.financial  {
 }
 .main-card.financial .main-card-content {
-    display: grid;
-    place-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 100%;
+    /* display: grid; */
+    /* place-items: center; */
+    /* justify-content: center; */
+    /* flex-direction: column; */
+    height: 200px;
 }
 .main-card.financial .main-card-content > div{
     display: flex;
@@ -666,7 +688,6 @@ td:last-child tr{
 }
 .main-card.notes .main-card-content {
     padding: 0px 20px 20px;
-    max-height: 200px;
     overflow-y: scroll;
     color: var(--text-color);
     background-color: var(--main-bg);

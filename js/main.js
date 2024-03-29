@@ -130,7 +130,6 @@ let popupsContainerOverlay = document.querySelector(".pop-ups .pop-up-oveylay")
 let popupCloseBtns = document.querySelectorAll(".close-pop-up")
 let popupCloseInputs = document.querySelectorAll(".pop-up input[type='reset']")
 let addAssestsBtn  = document.querySelector("button.assets");
-console.log(quickActionsBtns)
 const closePopup = () => {
     popupsContainer.classList.add("hidden")
     setTimeout(() => {
@@ -145,15 +144,12 @@ const openPopup = () => {
 }
 
 popups.forEach((popup, index) => {
-    console.log(popup, index)
     // popup.style.display = "none"
 })
 quickActionsBtns.forEach((btn,index) => {
-    console.log(btn, index)
     btn.onclick = () => {
         openPopup()
         popups.forEach((popup) => {
-            console.log(popup, index)
             popup.style.display = "none"
         })
         popups[index].style.display = "block"
@@ -172,3 +168,15 @@ popupCloseInputs.forEach((popupCloseInput) => {
 popupsContainerOverlay.onclick = () => {
     closePopup();
 }
+
+let infoPairWrapper = document.querySelectorAll("*:has(> .main-card-info-pair)")
+
+infoPairWrapper.forEach((pairWrapper) => {
+    let infoPair = pairWrapper.querySelectorAll(".main-card-info-pair")
+    console.log(infoPair)
+    infoPair.forEach((pair) => {
+        pair.style.cssText = `
+            height: calc((100% / ${infoPair.length}));
+        `
+    })
+})
