@@ -148,11 +148,16 @@ popups.forEach((popup, index) => {
 })
 quickActionsBtns.forEach((btn,index) => {
     btn.onclick = () => {
-        openPopup()
-        popups.forEach((popup) => {
-            popup.style.display = "none"
-        })
-        popups[index].style.display = "block"
+        if(btn.classList.contains("print")){
+            window.print();
+            return false;
+        }else{
+            openPopup()
+            popups.forEach((popup) => {
+                popup.style.display = "none"
+            })
+            popups[index].style.display = "block"
+        }
     }
 })
 popupCloseBtns.forEach((popupCloseBtn) => {
@@ -173,7 +178,6 @@ let infoPairWrapper = document.querySelectorAll("*:has(> .main-card-info-pair)")
 
 infoPairWrapper.forEach((pairWrapper) => {
     let infoPair = pairWrapper.querySelectorAll(".main-card-info-pair")
-    console.log(infoPair)
     infoPair.forEach((pair) => {
         pair.style.cssText = `
             height: calc((100% / ${infoPair.length}));

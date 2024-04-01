@@ -1050,17 +1050,38 @@ main footer a{
     text-align: center;
     background-color: var(--card-bg);
 }
+.pop-ups .pop-up.submit .table-wrapper{
+    margin-bottom: 0;
+}
 .pop-ups .pop-up.submit .table-wrapper input[type="number"]{
 }
 .pop-ups .pop-up.submit .admission{
     width: 100%;
     padding: 10px;
 }
+.pop-ups .pop-up.submit h4{
+    margin-bottom: 10px;
+    font-size: 14px;
+}
 .pop-ups .pop-up.submit .admission textarea{
     padding: 10px;
     background-color: var(--card-bg);
     resize: none;
     height: 100px;
+    margin-top: 0;
+}
+.pop-ups .pop-up.send{
+    width: 400px;
+    max-width: 95%;
+}
+.pop-ups .pop-up.send form{
+}
+.pop-ups .pop-up.send form .admission{
+    width: 100% !important;
+}
+.pop-ups .pop-up.send form .admission textarea{
+    font-size: 14px;
+    padding: 10px;
 }
 @media (max-width: 1200px) {
     main .main-id{
