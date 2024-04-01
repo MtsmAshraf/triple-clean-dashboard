@@ -184,7 +184,7 @@
               <span>SAR</span>
             </div>
             <div class="paid">
-              <h4>صافي الربح</h4>
+              <h4>الربح</h4>
               <h2>1520</h2>
               <span>SAR</span>
             </div>
@@ -1410,22 +1410,54 @@
           <i class="fa-solid fa-xmark"></i>
         </div>
       </h3>
-      <form action="">
-        <div>
-          <label for="add-asset-btn">
-            <i class="fa-solid fa-plus"></i>
-          </label>
-          <input type="file" id="add-asset-btn">
+      <div class="animated-wrapper">
+        <div class="assets-types-wrapper">
+          <div class="asset-type">
+            <i class="fa-solid fa-file"></i>
+            <h4>ملف التصميم</h4>
+          </div>
+          <div class="asset-type">
+            <i class="fa-solid fa-file-invoice"></i>
+            <h4>الفاتورة</h4>
+          </div>
+          <div class="asset-type">
+            <i class="fa-solid fa-file-import"></i>
+            <h4>إشعار التسليم</h4>
+          </div>
+          <div class="asset-type">
+            <i class="fa-solid fa-file-contract"></i>
+            <h4>التعميد</h4>
+          </div>
+          <div class="asset-type">
+            <i class="fa-solid fa-file-circle-plus"></i>
+            <h4>مرفقات أخرى</h4>
+          </div>
         </div>
-        <div>
-          <label for="asset-name">اسم المرفق</label>
-          <input type="text" id="asset-name" placeholder="اسم المرفق">
-        </div>
-        <div class="pop-up-form-btns">
-          <input type="submit" value="حفظ">
-          <input type="reset" value="إلغاء">
-        </div>
-      </form>
+        <form action="">
+          <span class="back-icon">
+            <i class="fa-solid fa-arrow-left"></i>
+          </span>
+          <div>
+            <label for="add-asset-btn">
+              <div>
+                <h5>اسحب الملفات هنا</h5>
+              </div>
+              <span>
+                <i class="fa-solid fa-plus"></i>
+              </span>
+            </label>
+            <input type="file" id="add-asset-btn">
+          </div>
+          <div>
+            <label for="asset-name">اسم المرفق</label>
+            <input type="text" id="asset-name" placeholder="اسم المرفق">
+          </div>
+          <div class="pop-up-form-btns">
+            <input type="submit" value="حفظ">
+            <input type="reset" value="إلغاء">
+          </div>
+        </form>
+      </div>
     </div>
     <div class="pop-up">
       <h3 class="pop-up-header">
@@ -1465,7 +1497,9 @@
       <form action="">
         <div>
           <label for="add-asset-btn">
-            <i class="fa-solid fa-plus"></i>
+            <span>
+              <i class="fa-solid fa-plus"></i>
+            </span>
           </label>
           <input type="file" id="add-asset-btn">
           <h4>إرفاق صورة</h4>

@@ -290,6 +290,12 @@ main .main-id{
     /* height: calc(280px - 41.5px); */
     height: 240px;
 }
+@media (max-width: 767px) {
+    .main-card .main-card-content,
+    .main-card .main-card-content{
+        height: fit-content;
+    }
+}
 .main-card.assets-card .main-card-content,
 .main-card.assets-parts .main-card-content{
     height: fit-content;
@@ -478,6 +484,11 @@ main .main-id{
     height: 200px;
     margin-top: 10px;
     overflow-y: scroll;
+}
+@media (max-width: 767px) {
+    .main-card.table-card .main-card-content .table-container{
+        height: 300px;
+    }
 }
 .main-card.table-card .main-card-content .table-container::-webkit-scrollbar{
     width: 10px;
@@ -799,6 +810,84 @@ main footer a{
 }
 .pop-ups .pop-up form input[type="file"]{
 }
+.pop-ups .pop-up:has(.assets-types-wrapper){
+    overflow: hidden;
+}
+.pop-ups .pop-up .animated-wrapper{
+    position: relative;
+    height: 430px;
+    width: 400px;
+}
+.pop-ups .pop-up:has(.assets-types-wrapper) .animated-wrapper form,
+.pop-ups .pop-up:has(.assets-types-wrapper) .animated-wrapper .assets-types-wrapper{
+    transition: var(--main-transition);
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: var(--main-bg);
+}
+.pop-ups .pop-up:has(.assets-types-wrapper) .animated-wrapper .assets-types-wrapper{
+    transform: translateX(-50%) translateY(-50%);
+}
+.pop-ups .pop-up:has(.assets-types-wrapper) .animated-wrapper.to-left .assets-types-wrapper{
+    transform: translateX(-200%) translateY(-50%);
+}
+.pop-ups .pop-up:has(.assets-types-wrapper) form{
+    transform: translateX(100%) translateY(-50%) !important;
+    height: 100%;
+    width: 100%;
+    place-content: center;
+}
+.pop-ups .pop-up:has(.assets-types-wrapper) .animated-wrapper.to-left form{
+    transform: translateX(-50%) translateY(-50%) !important;
+}
+.pop-ups .pop-up:has(.assets-types-wrapper) form .back-icon{
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    background-color: var(--main-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+.pop-ups .pop-up .assets-types-wrapper{
+    display: grid;
+    grid-template-columns: repeat(2,minmax(150px,1fr));
+    gap: 10px;
+    padding: 50px 20px;
+    height: 100%;
+}
+.pop-ups .pop-up .assets-types-wrapper > div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;   
+    border: 1px solid var(--span-color);
+    cursor: pointer;
+    border-radius: 6px;
+    transition: var(--main-transition);
+    color: var(--text-color);
+    background-color: var(--main-bg);
+}
+.pop-ups .pop-up .assets-types-wrapper > div:hover{
+    color: #fff;
+    background-color: var(--main-color);
+}
+.pop-ups .pop-up .assets-types-wrapper > div svg{
+    font-size: 30px;
+}
+.pop-ups .pop-up .assets-types-wrapper > div h4{
+    margin-top: 10px;
+}
 .pop-ups .pop-up form div:has(input[type="file"]) {
     width: 100%;
     display: flex;
@@ -833,7 +922,38 @@ main footer a{
     color: #fff;
 }
 .pop-ups .pop-up form label[for="add-asset-btn"]{
+    /* background-color: wheat; */
+    width: 70%;
+    padding: 20px;
+    position: relative;
+    height: 120px;
+}
+.pop-ups .pop-up form label[for="add-asset-btn"] div{
+    background-color: var(--card-bg);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
     cursor: pointer;
+    border-radius: 6px;
+    border: 1px dashed var(--span-color);
+
+}
+.pop-ups .pop-up form label[for="add-asset-btn"] h5{
+    font-size: 16px;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 50%;
+    transform: translateY(50%);
+}
+.pop-ups .pop-up form label[for="add-asset-btn"] span{
+    box-shadow: var(--card-shadow);
+    cursor: pointer;
+    border-radius: 50%;
     background-color: var(--main-color);
     color: white;
     width: 50px;
@@ -842,13 +962,18 @@ main footer a{
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
-    box-shadow: var(--card-shadow);
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 10px;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%,-50%);
 }
-.pop-ups .pop-up form label[for="add-asset-btn"] svg{
+.pop-ups .pop-up form label[for="add-asset-btn"] span svg{
     transition: var(--main-transition);
 }
-.pop-ups .pop-up form label[for="add-asset-btn"]:hover svg{
+.pop-ups .pop-up form label[for="add-asset-btn"] span:hover svg{
     transform: rotateZ(90deg);
 }
 .pop-ups .pop-up form input[type="file"]{
@@ -942,5 +1067,23 @@ main footer a{
     }
     .main-card.assets-card .main-card-content{
         grid-template-columns: repeat(2,minmax(150px,1fr));
+    }
+}
+
+@media print {
+    body{
+        background-color: red;
+    }
+    .main-card{
+        display: none;
+    }
+    .main-card.table-card{
+        display: block;
+    }
+    header{
+        display: none;
+    }
+    .main-card.quick-actions{
+        display: none;
     }
 }

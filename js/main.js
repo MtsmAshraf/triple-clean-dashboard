@@ -180,3 +180,15 @@ infoPairWrapper.forEach((pairWrapper) => {
         `
     })
 })
+
+let assetTypeBtns = document.querySelectorAll(".pop-up .asset-type")
+let animatedWrapper = document.querySelector(".animated-wrapper")
+let popUpBack = document.querySelector(".pop-ups .pop-up:has(.assets-types-wrapper) form .back-icon")
+assetTypeBtns.forEach((btn) => {
+    btn.onclick = () => {
+        animatedWrapper.classList.add("to-left");
+    }
+})
+popUpBack.onclick = () => {
+    animatedWrapper.classList.remove("to-left");
+}
