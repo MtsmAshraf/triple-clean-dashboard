@@ -99,6 +99,7 @@ const toggleTheme = () => {
         root.style.setProperty("--card-shadow", "0px 10px 10px 0px #071122")
         root.style.setProperty("--span-color", "#aaa")
         root.style.setProperty("--asset-img-hovererd", "rgb(0, 0, 15)")
+        root.style.setProperty("--calender-icon-filter", "invert(1)")
         toggleThemeBtn.classList.toggle("dark");
         isDark = false;
     }else{
@@ -112,6 +113,7 @@ const toggleTheme = () => {
         root.style.setProperty("--card-shadow", "0px 2px 10px 0px #ccc")
         root.style.setProperty("--span-color", "#333")
         root.style.setProperty("--asset-img-hovererd", "#eee")
+        root.style.setProperty("--calender-icon-filter", "invert(0)")
         toggleThemeBtn.classList.toggle("dark");
         isDark = true;
     }
@@ -123,7 +125,7 @@ toggleThemeBtn.onclick = () =>  {
     toggleTheme();
 }
 
-let quickActionsBtns = document.querySelectorAll(".quick-actions button")
+let quickActionsBtns = document.querySelectorAll(".pop-up-btn")
 let popupsContainer = document.querySelector(".pop-ups")
 let popups = document.querySelectorAll(".pop-ups .pop-up");
 let popupsContainerOverlay = document.querySelector(".pop-ups .pop-up-oveylay")
@@ -149,8 +151,17 @@ popups.forEach((popup, index) => {
 quickActionsBtns.forEach((btn,index) => {
     btn.onclick = () => {
         if(btn.classList.contains("print")){
-            window.print();
-            return false;
+            // window.print();
+        }else if(btn.classList.contains("pay")){
+            openPopup()
+            console.log("PPPPPPPPPAAAAAaaaaaaaYYYYYYYYYYYYY")
+            popups.forEach((popup) => {
+                if(popup.classList.contains("add-pay") === false){
+                    popup.style.display = "none"
+                }else{
+                    popup.style.display = "block"
+                }
+            })
         }else{
             openPopup()
             popups.forEach((popup) => {
@@ -196,3 +207,26 @@ assetTypeBtns.forEach((btn) => {
 popUpBack.onclick = () => {
     animatedWrapper.classList.remove("to-left");
 }
+
+
+// let addItemBtn = document.querySelector(".add-item-btn")
+// let addItemPopUp = document.querySelector(".pop-up.add-item")
+// let closeAddItemBtn = document.querySelector(".pop-up.add-item .close-pop-up")
+// addItemBtn.onclick = () => {
+//     openPopup()
+//     addItemPopUp.style.display = "block"
+// }
+// closeAddItemBtn.onclick = () => {
+//     closePopup()
+// }
+
+// let addBuyingOrderBtn = document.querySelector(".add-buying-order-btn")
+// let addBuyingOrderPopUp = document.querySelector(".pop-up.add-buying-order")
+// let closeBuyingOrderBtn = document.querySelector(".pop-up.add-buying-order .close-pop-up")
+// addBuyingOrderBtn.onclick = () => {
+//     openPopup()
+//     addBuyingOrderPopUp.style.display = "block"
+// }
+// closeBuyingOrderBtn.onclick = () => {
+//     closePopup()
+// }

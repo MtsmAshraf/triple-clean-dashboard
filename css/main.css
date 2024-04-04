@@ -47,6 +47,7 @@ body{
     --overlay-bg: rgb(0,0,0,0.7);
     --asset-img-hovererd: #eee;
     --asset-img-hovererd: rgb(0, 0, 15);
+    --calender-icon-filter: invert(0)
 }
 button{
     padding: 5px 10px;
@@ -514,9 +515,6 @@ main .main-id{
     border-radius: 20px;
 }
 .main-card.table-card td.status{
-}
-td:last-child tr{
-    background-color: red;
 }
 .main-card.table-card td.status span{
     font-size: 14px;
@@ -1075,13 +1073,158 @@ main footer a{
     max-width: 95%;
 }
 .pop-ups .pop-up.send form{
+    padding-top: 40px;
+}
+.pop-ups .pop-up.send form label{
+    position: relative;
+}
+.pop-ups .pop-up.send form  span{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.pop-ups .pop-up.send form textarea{
+    height: 100px;
+    width: 100% !important;
+    font-size: 12px;
+    padding: 10px;
 }
 .pop-ups .pop-up.send form .admission{
     width: 100% !important;
 }
 .pop-ups .pop-up.send form .admission textarea{
-    font-size: 14px;
+    width: 100% !important;
     padding: 10px;
+}
+.pop-ups .pop-up.add-item form div,
+.pop-ups .pop-up.add-buying-order form div
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.pop-ups .pop-up.add-item form div label,
+.pop-ups .pop-up.add-buying-order form div label
+{
+    width: 70px;
+    text-align: center;
+}
+.pop-ups .pop-up .payment-summary{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+.pop-ups .pop-up .payment-summary > div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+.pop-ups .pop-up .payment-summary > div h4{
+    font-weight: normal;
+    font-size: 14px;
+}
+.pop-ups .pop-up .payment-summary > div.total{
+    color: var(--pending-color);
+}
+.pop-ups .pop-up .payment-summary > div.paid{
+    color: var(--done-color);
+}
+.pop-ups .pop-up .payment-summary > div.change{
+    color: var(--cancelled-color);
+}
+.pop-ups .pop-up .payment-summary > div span{
+    color: var(--span-color);
+}
+.pop-ups .pop-up .payment-summary > div h2{
+    font-size: 30px;
+}
+.pop-ups .pop-up form.payment h4{
+    /* font-weight: normal; */
+}
+.pop-ups .pop-up form.payment > div:not(:last-child){
+    border-bottom: 1px solid var(--span-color);
+    padding-bottom: 20px;
+}
+.pop-ups .pop-up form.payment label{
+    font-size: 14px;
+}
+.pop-ups .pop-up form.payment .selector-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.pop-ups .pop-up form.payment .selector-wrapper > div{
+    position: relative;
+}
+.pop-ups .pop-up form.payment .selector-wrapper input{
+    position: absolute;
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+.pop-ups .pop-up form.payment .selector-wrapper label{
+    border: 1px solid var(--text-color);
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    padding: 2px 10px;
+    border-radius: 6px;
+    transition: var(--main-transition);
+    cursor: pointer;
+}
+.pop-ups .pop-up form.payment .selector-wrapper > div:has(input:checked) label,
+.pop-ups .pop-up form.payment .selector-wrapper label:hover{
+    background-color: var(--main-color);
+    color: #fff;
+    border: 1px solid var(--main-color);
+}
+.pop-ups .pop-up form.payment .payment-inputs{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+    width: 400px;
+}
+.pop-ups .pop-up form.payment .payment-inputs input,
+.pop-ups .pop-up form.payment .payment-inputs textarea{
+    margin: 0 !important;
+    height: 30px;
+    background-color: var(--card-bg);
+}
+.pop-ups .pop-up form.payment .payment-inputs textarea{
+    height: 60px;
+    resize: none;
+}
+::-webkit-calendar-picker-indicator {
+    filter: var(--calender-icon-filter);
+}
+.pop-ups .pop-up form.payment .payment-inputs > div:first-child,
+.pop-ups .pop-up form.payment .payment-inputs > div:last-child{
+    grid-column: 1/3;
+}
+.pop-ups .pop-up form.payment .payment-inputs > div{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.pop-ups .pop-up form.payment .drag-files{
+    margin-top: 20px;
+}
+.pop-ups .pop-up form.payment .drag-files label{
+    position: relative;
+}
+.pop-ups .pop-up form.payment .drag-files label span{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.pop-ups .pop-up form.payment .drag-files{
 }
 @media (max-width: 1200px) {
     main .main-id{
@@ -1147,19 +1290,41 @@ main footer a{
 }
 
 @media print {
-    body{
-        background-color: red;
+
+    .main-card .main-card-content,
+    .main-card .main-card-content{
+        height: 240px;
     }
-    .main-card{
+    .main-card.financial .main-card-content{
+        height: auto;
+    }
+    .main-card.notes {
         display: none;
+    }
+    .main-card *{
+        color: #000 !important;
     }
     .main-card.table-card{
         display: block;
     }
-    header{
+    header, aside{
         display: none;
     }
     .main-card.quick-actions{
         display: none;
+    }
+    button{
+        display: none !important;
+    }
+    .main-card .main-card-content .table-container{
+        margin-top: 10px;
+        height: fit-content !important;
+        overflow-y: visible;
+    }
+    .main-card{
+        box-shadow: none;
+    }
+    .main-id{
+        color: #000 !important;
     }
 }
