@@ -151,10 +151,9 @@ popups.forEach((popup, index) => {
 quickActionsBtns.forEach((btn,index) => {
     btn.onclick = () => {
         if(btn.classList.contains("print")){
-            // window.print();
+            window.print();
         }else if(btn.classList.contains("pay")){
             openPopup()
-            console.log("PPPPPPPPPAAAAAaaaaaaaYYYYYYYYYYYYY")
             popups.forEach((popup) => {
                 if(popup.classList.contains("add-pay") === false){
                     popup.style.display = "none"
@@ -208,25 +207,66 @@ popUpBack.onclick = () => {
     animatedWrapper.classList.remove("to-left");
 }
 
+// ##################################################################
+// drag and drop 
+// ####################################################################
+function handleFiles(files) {
+    var galleries = document.querySelectorAll('.gallery');
+    galleries.forEach((gallery) => {
+        gallery.innerHTML = '';
+        
+        for (var i = 0, len = files.length; i < len; i++) {
+        var img = document.createElement('img');
+        img.src = URL.createObjectURL(files[i]);
+        img.onload = function() {
+            URL.revokeObjectURL(this.src);
+        }
+            gallery.appendChild(img);
+        }
+    })
 
-// let addItemBtn = document.querySelector(".add-item-btn")
-// let addItemPopUp = document.querySelector(".pop-up.add-item")
-// let closeAddItemBtn = document.querySelector(".pop-up.add-item .close-pop-up")
-// addItemBtn.onclick = () => {
-//     openPopup()
-//     addItemPopUp.style.display = "block"
-// }
-// closeAddItemBtn.onclick = () => {
-//     closePopup()
-// }
 
-// let addBuyingOrderBtn = document.querySelector(".add-buying-order-btn")
-// let addBuyingOrderPopUp = document.querySelector(".pop-up.add-buying-order")
-// let closeBuyingOrderBtn = document.querySelector(".pop-up.add-buying-order .close-pop-up")
-// addBuyingOrderBtn.onclick = () => {
-//     openPopup()
-//     addBuyingOrderPopUp.style.display = "block"
-// }
-// closeBuyingOrderBtn.onclick = () => {
-//     closePopup()
-// }
+}
+
+(function() {
+var dropareas = document.querySelectorAll(".drop-area")
+// var dropArea = document.getElementById('drop-area');
+
+dropareas.forEach((dropArea) => {
+    // console.log("dropareas")
+    
+    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+        dropArea.addEventListener(eventName, preventDefaults, false);
+    });
+
+    function preventDefaults(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    }
+
+    ['dragenter', 'dragover'].forEach(eventName => {
+    dropArea.addEventListener(eventName, highlight, false);
+    });
+
+    ['dragleave', 'drop'].forEach(eventName => {
+    dropArea.addEventListener(eventName, unhighlight, false);
+    });
+
+    function highlight(e) {
+    dropArea.classList.add('highlight');
+    }
+
+    function unhighlight(e) {
+    dropArea.classList.remove('highlight');
+    }
+
+    dropArea.addEventListener('drop', handleDrop, false);
+
+    function handleDrop(e) {
+    var dt = e.dataTransfer;
+    var files = dt.files;
+
+    handleFiles(files);
+    }
+})
+})();

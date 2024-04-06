@@ -95,10 +95,11 @@
             <i class="fa-solid fa-print"></i>
             <span>تسليم البضاعة</span>
           </button>
-          <button class="pop-up-btn print">
+          <button class="pop-up-btn print" onclick="javascript:window.print()">
             <i class="fa-solid fa-print"></i>
             <span>
-              <a href="javascript:window.print()">طباعة أمر التشغيل</a>
+              طباعة أمر التشغيل
+              <!-- <a href="javascript:window.print()">طباعة أمر التشغيل</a> -->
             </span>
             
           </button>
@@ -1437,30 +1438,32 @@
             <h4>مرفقات أخرى</h4>
           </div>
         </div>
-        <form action="">
-          <span class="back-icon">
-            <i class="fa-solid fa-arrow-left"></i>
-          </span>
-          <div>
-            <label for="add-asset-btn">
-              <div>
-                <h5>اسحب الملفات هنا</h5>
-              </div>
-              <span>
-                <i class="fa-solid fa-plus"></i>
-              </span>
-            </label>
-            <input type="file" id="add-asset-btn">
-          </div>
-          <div>
-            <label for="asset-name">اسم المرفق</label>
-            <input type="text" id="asset-name" placeholder="اسم المرفق">
-          </div>
-          <div class="pop-up-form-btns">
-            <input type="submit" value="حفظ">
-            <input type="reset" value="إلغاء">
-          </div>
-        </form>
+        <div class="drop-area">
+          <form action="">
+            <span class="back-icon">
+              <i class="fa-solid fa-arrow-left"></i>
+            </span>
+            <div>
+              <label for="add-asset-btn">
+                <div>
+                  <h5>اسحب الملفات هنا</h5>
+                </div>
+                <span>
+                  <i class="fa-solid fa-plus"></i>
+                </span>
+              </label>
+              <input type="file" id="add-asset-btn">
+            </div>
+            <div>
+              <label for="asset-name">اسم المرفق</label>
+              <input type="text" id="asset-name" placeholder="اسم المرفق">
+            </div>
+            <div class="pop-up-form-btns">
+              <input type="submit" value="حفظ">
+              <input type="reset" value="إلغاء">
+            </div>
+          </form>
+        </div>
       </div>
     </div>
     <div class="pop-up">
@@ -1794,53 +1797,60 @@
           <span>SAR</span>
         </div>
       </div>
-      <form class="payment">
-        <h4>طريقة الدفع</h4>
-        <div class="selector-wrapper">
-          <div>
-            <label for="cash">كاش</label>
-            <input type="radio" name="payment-method" id="cash">
-          </div>
-          <div>
-            <label for="network">شبكة</label>
-            <input type="radio" name="payment-method" id="network">
-          </div>
-          <div>
-            <label for="trans">تحويل</label>
-            <input type="radio" name="payment-method" id="trans">
-          </div>
-        </div>
-        <div class="payment-inputs">
-          <div>
-            <label for="payment-amount">المبلغ المدفوع</label>
-            <input type="number" id="payment-amount" min="0">
-          </div>
-          <div>
-            <label for="collector">الشخص المحصل</label>
-            <input type="text" id="collector">
-          </div>
-          <div>
-            <label for="payment-date">التاريخ</label>
-            <input type="date"id="payment-date" >
-          </div>
-          <div>
-            <label for="payment-notes">ملاحظات</label>
-            <textarea id="payment-notes"></textarea>
-          </div>
-        </div>
-        <h4>إضافة مرفق</h4>
-        <div class="drag-files">
-          <label for="add-asset-btn">
+      <div class="drop-area">
+        <form class="payment">
+          <h4>طريقة الدفع</h4>
+          <div class="selector-wrapper">
             <div>
-              <h5>اسحب الملفات هنا</h5>
+              <label for="cash">كاش</label>
+              <input type="radio" name="payment-method" id="cash">
             </div>
-            <span>
-              <i class="fa-solid fa-plus"></i>
-            </span>
-          </label>
-          <input type="file" id="add-asset-btn">
+            <div>
+              <label for="network">شبكة</label>
+              <input type="radio" name="payment-method" id="network">
+            </div>
+            <div>
+              <label for="trans">تحويل</label>
+              <input type="radio" name="payment-method" id="trans">
+            </div>
+          </div>
+          <div class="payment-inputs">
+            <div>
+              <label for="payment-amount">المبلغ المدفوع</label>
+              <input type="number" id="payment-amount" min="0">
+            </div>
+            <div>
+              <label for="collector">الشخص المحصل</label>
+              <input type="text" id="collector">
+            </div>
+            <div>
+              <label for="payment-date">التاريخ</label>
+              <input type="date"id="payment-date" >
+            </div>
+            <div>
+              <label for="payment-notes">ملاحظات</label>
+              <textarea id="payment-notes"></textarea>
+            </div>
+          </div>
+          <h4>إضافة مرفق</h4>
+          <div class="drag-files">
+            <label for="add-asset-btn">
+              <div>
+                <h5>اسحب الملفات هنا</h5>
+              </div>
+              <span>
+                <i class="fa-solid fa-plus"></i>
+              </span>
+            </label>
+            <input type="file" id="add-asset-btn">
+          </div>
+        </form>
+        <div class="gallery"></div>
+        <div class="pop-up-form-btns">
+          <input type="submit" value="حفظ">
+          <input type="reset" value="إلغاء">
         </div>
-      </form>
+      </div>
     </div>
     <div class="pop-up add-item">
       <h3 class="pop-up-header">
