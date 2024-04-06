@@ -210,63 +210,49 @@ popUpBack.onclick = () => {
 // ##################################################################
 // drag and drop 
 // ####################################################################
-function handleFiles(files) {
-    var galleries = document.querySelectorAll('.gallery');
-    galleries.forEach((gallery) => {
-        gallery.innerHTML = '';
-        
+var galleries = document.querySelectorAll('.gallery');
+function handleFiles(files, index) {
+    // galleries.forEach((gallery) => {
+        console.log(index)
+        galleries[index].innerHTML = '';
         for (var i = 0, len = files.length; i < len; i++) {
         var img = document.createElement('img');
         img.src = URL.createObjectURL(files[i]);
         img.onload = function() {
             URL.revokeObjectURL(this.src);
         }
-            gallery.appendChild(img);
+            galleries[index].appendChild(img);
         }
-    })
-
-
+    // })
 }
 
 (function() {
 var dropareas = document.querySelectorAll(".drop-area")
-// var dropArea = document.getElementById('drop-area');
-
-dropareas.forEach((dropArea) => {
-    // console.log("dropareas")
-    
+dropareas.forEach((dropArea, index) => {
     ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
         dropArea.addEventListener(eventName, preventDefaults, false);
     });
-
     function preventDefaults(e) {
-    e.preventDefault();
-    e.stopPropagation();
+        e.preventDefault();
+        e.stopPropagation();
     }
-
     ['dragenter', 'dragover'].forEach(eventName => {
-    dropArea.addEventListener(eventName, highlight, false);
+        dropArea.addEventListener(eventName, highlight, false);
     });
-
     ['dragleave', 'drop'].forEach(eventName => {
-    dropArea.addEventListener(eventName, unhighlight, false);
+        dropArea.addEventListener(eventName, unhighlight, false);
     });
-
     function highlight(e) {
-    dropArea.classList.add('highlight');
+        dropArea.classList.add('highlight');
     }
-
     function unhighlight(e) {
-    dropArea.classList.remove('highlight');
+        dropArea.classList.remove('highlight');
     }
-
     dropArea.addEventListener('drop', handleDrop, false);
-
     function handleDrop(e) {
     var dt = e.dataTransfer;
     var files = dt.files;
-
-    handleFiles(files);
+    handleFiles(files, index);
     }
 })
 })();

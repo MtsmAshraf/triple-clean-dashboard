@@ -1372,8 +1372,11 @@ main footer a{
     margin-top: 20px;
     margin-right: auto;
     margin-left: auto;
+    background-color: red;
+    min-height: 100px;
+    min-width: 100px;
+    z-index: 30;
   }
-  
   img {
     max-width: 100%;
     height: auto;
